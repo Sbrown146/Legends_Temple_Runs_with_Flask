@@ -115,6 +115,8 @@ function default_teams(){
     default_time=default_time.filter(time => time!=0);
     default_time_sum=default_time.reduce(function(a ,b){ return a + b });
 
+    //Fix default_time sum later
+
     d3.select(".panel-title").text(`Stats for: All Teams`);
     d3.select("#sample-metadata").append("h5").text(`Temple Runs: ${default_runs.length}`);
     d3.select("#sample-metadata").append("h5").text(`Temple Victories: ${default_victory.length}`);

@@ -21,9 +21,8 @@ import json
 
 app = Flask(__name__)
 
-#engine=create_engine("postgresql+psycopg2://postgres:postgres@localhost:5432/Legends_Temple_Runs")
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://postgres:postgres@localhost:5432/Legends_Temple_Runs"
-# heroku = Heroku(app)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Legends.sqlite"
+#app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://postgres:postgres@localhost:5432/Legends_Temple_Runs"
 db = SQLAlchemy(app)
 
 Base = automap_base()
