@@ -113,10 +113,11 @@ function default_teams(){
     default_failed_acq=default_failed_acq.filter(failure => failure=="Failed Acquisition");
     default_triple_seizure=default_triple_seizure.filter(failure => failure=="Triple Seizure");
     default_time=default_time.filter(time => time!=0);
+    default_time=default_time.map(function(time){ return parseInt(time, 10); });
     default_time_sum=default_time.reduce(function(a ,b){ return a + b });
 
     //Fix default_time sum later
-
+   
     d3.select(".panel-title").text(`Stats for: All Teams`);
     d3.select("#sample-metadata").append("h5").text(`Temple Runs: ${default_runs.length}`);
     d3.select("#sample-metadata").append("h5").text(`Temple Victories: ${default_victory.length}`);
@@ -361,6 +362,7 @@ function option_Team(different_selection) {
     team_failed_acq=team_failed_acq.filter(failure => failure=="Failed Acquisition");
     team_triple_seizure=team_triple_seizure.filter(failure => failure=="Triple Seizure");
     team_time=team_time.filter(time => time!=0);
+    team_time=team_time.map(function(time){ return parseInt(time, 10); });
     team_time_sum=team_time.reduce(function(a ,b){ return a + b });
 
     d3.select(".panel-title").text(`Stats for: ${different_selection}`);
@@ -495,6 +497,7 @@ function option_Season(different_selection) {
     season_failed_acq=season_failed_acq.filter(failure => failure=="Failed Acquisition");
     season_triple_seizure=season_triple_seizure.filter(failure => failure=="Triple Seizure");
     season_time=season_time.filter(time => time!=0);
+    season_time=season_time.map(function(time){ return parseInt(time, 10); });
     season_time_sum=season_time.reduce(function(a ,b){ return a + b });
 
     d3.select(".panel-title").text(`Stats for: Season ${different_selection}`);
@@ -629,6 +632,7 @@ function option_Layout(different_selection) {
     temple_failed_acq=temple_failed_acq.filter(failure => failure=="Failed Acquisition");
     temple_triple_seizure=temple_triple_seizure.filter(failure => failure=="Triple Seizure");
     temple_time=temple_time.filter(time => time!=0);
+    temple_time=temple_time.map(function(time){ return parseInt(time, 10); });
     if (temple_time.length===0){
       temple_time_sum=0;
     }
@@ -785,6 +789,7 @@ function option_Pendants(different_selection) {
     pendants_failed_acq=pendants_failed_acq.filter(failure => failure=="Failed Acquisition");
     pendants_triple_seizure=pendants_triple_seizure.filter(failure => failure=="Triple Seizure");
     pendants_time=pendants_time.filter(time => time!=0);
+    pendants_time=pendants_time.map(function(time){ return parseInt(time, 10); });
     pendants_time_sum=pendants_time.reduce(function(a ,b){ return a + b });
 
     let pendants_list=["0", "1", "1 1/2", "1 1/2 + 1/2", "2"];
@@ -921,6 +926,7 @@ function option_Solo(different_selection) {
     solo_failed_acq=solo_failed_acq.filter(failure => failure=="Failed Acquisition");
     solo_triple_seizure=solo_triple_seizure.filter(failure => failure=="Triple Seizure");
     solo_time=solo_time.filter(time => time!=0);
+    solo_time=solo_time.map(function(time){ return parseInt(time, 10); });
     solo_time_sum=solo_time.reduce(function(a ,b){ return a + b });
 
 
